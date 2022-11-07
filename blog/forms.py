@@ -18,3 +18,4 @@ class PostForm(forms.ModelForm):
                 'placeholder': 'Введите описание'
             }),
         }
+

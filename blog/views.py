@@ -39,17 +39,16 @@ def post_edit(request, pk):
 
 def create(request):
     error = ''
-    if request.method == 'POST':
+    if request.method == "POST":
         form = PostForm(request.POST)
         if form.is_valid():
-            form.save()
-            return redirect('/')
-        else:
-            error = 'Новость заполнена неверно!'
+            post = form.save(commit=False)
+            post.author = request.user
+            post.published_date = timezone.now()
+            post.save()
+            return redirect('post_detail', pk=post.pk)
+    else:
+        form = PostForm()
+    return render(request, 'blog/create.html', {'form': form})
 
-    form = PostForm()
-    context = {
-        'form': form,
-        'error': error
-    }
-    return render(request, 'blog/create.html', context)
+
