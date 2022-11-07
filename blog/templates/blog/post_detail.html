@@ -1,0 +1,35 @@
+{% extends 'blog/base.html' %}
+
+{% block title %}
+Наши контакты.
+{% endblock %}
+
+{% block page_content %}
+    <!-- Page Header-->
+    <header class="masthead" style="background-image: url('assets/img/post-bg.jpg')">
+        <div class="container position-relative px-4 px-lg-5">
+            <div class="row gx-4 gx-lg-5 justify-content-center">
+                <div class="col-md-10 col-lg-8 col-xl-7">
+                    <div class="post-heading">
+                        <h1>Просмотр записи!</h1>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </header>
+    <div class="post">
+        {% if post.published_date %}
+            <div class="date">
+                {{ post.published_date }}
+            </div>
+        {% endif %}
+        {% if user.is_authenticated %}
+        <a class="fa-duotone fa-hexagon-check" href="{% url 'post_edit' pk=post.pk %}"><span class="fa-solid fa-pencil-slash"></span></a>
+        {% endif %}
+        <h1>{{ post.title }}</h1>
+        <p>{{ post.text|linebreaksbr }}</p>
+    </div>
+    <div>
+        <h4><a href="/">Back</a></h4>
+    </div>
+{% endblock %}
