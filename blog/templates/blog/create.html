@@ -21,6 +21,7 @@ Post create.
             {% csrf_token %}
             {{ form.title }}<br>
             {{ form.text }}<br>
+            {{ form.image }}<br>
             <button type="submit" class="">Save</button>
             <span>{{ error }}</span>
         </form>

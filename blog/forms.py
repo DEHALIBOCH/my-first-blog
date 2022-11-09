@@ -1,13 +1,13 @@
 from django import forms
 from .models import Post
-from django.forms import ModelForm, TextInput, Textarea
+from django.forms import ModelForm, TextInput, Textarea, ImageField
 
 
 class PostForm(forms.ModelForm):
 
     class Meta:
         model = Post
-        fields = ['title', 'text']
+        fields = ['title', 'text', 'image']
         widgets = {
             "title": TextInput(attrs={
                 'class': 'form-control',

@@ -11130,17 +11130,11 @@ header.masthead {
   background-image: url('../assets/img/home-bg.jpg');
 }
 
-/* header.masthead {
-  position: relative;
-  margin-bottom: 3rem;
-  padding-top: calc(8rem + 57px);
-  padding-bottom: 8rem;
+.blog_img {
+  text-align: center;
   background: no-repeat center center;
-  background-color: #6c757d;
   background-size: cover;
-  background-attachment: scroll;
-  background-image: url('../assets/img/home-bg.jpg')
-} */
+}
 
 
 

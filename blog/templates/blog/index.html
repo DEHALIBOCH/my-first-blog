@@ -30,6 +30,9 @@ Arasaka Blog.
                         <div class="post-title">
                             <h1><a  href="{% url 'post_detail' pk=post.pk %}">{{ post.title }}</a></h1>
                         </div>
+                        <div class="blog_img">
+                            <img src="/media/{{ post.image }}" alt="">
+                        </div>
                         <div class="post-subtitle">
                             <p class="post-subtitle">{{ post.text|linebreaksbr }}</p>
                         </div>
